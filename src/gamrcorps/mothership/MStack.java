@@ -1,4 +1,4 @@
-package src.gamrcorps;
+package src.gamrcorps.mothership;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.List;
 //Standard stack class for storing data in a program
 
 @SuppressWarnings("unchecked")
-public class MStack {
-    private List stack;
+public class MStack implements MObject {
+    private List<MObject> stack;
 
     public MStack() {
-        stack = new ArrayList<>();
+        stack = new ArrayList<MObject>();
     }
 
     //Remove and return object at the top of the stack
@@ -34,17 +34,38 @@ public class MStack {
     }
 
     //Put an object at the top of the stack
-    public void push(Object value) {
+    public void push(MObject value) {
         stack.add(value);
     }
 
     //Put an object at a specific index, and shift other values upwards
-    public void put(int index, Object value) {
+    public void put(int index, MObject value) {
         stack.add(index, value);
     }
 
     //Set an object at a specific index to the specified object
-    public void set(int index, Object value) {
+    public void set(int index, MObject value) {
         stack.set(index, value);
+    }
+
+    public int length() {
+        return stack.size();
+    }
+
+    public String toString() {
+        String temp = "";
+        for (int i = 0; i < stack.size(); i++) {
+            temp += stack.get(i);
+        }
+        return temp;
+    }
+
+    public String toString(String separator) {
+        String temp = "";
+        for (int i = 0; i < stack.size(); i++) {
+            temp += stack.get(i);
+            temp += separator;
+        }
+        return temp;
     }
 }
