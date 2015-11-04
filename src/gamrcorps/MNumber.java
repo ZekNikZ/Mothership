@@ -31,6 +31,7 @@ public class MNumber {
         bigDoubleValue = value;
     }
 
+    //Return a new MNumber with int value of zero (primarily for use with the stack)
     public static MNumber zero() {
         return new MNumber(0);
     }
