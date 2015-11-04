@@ -21,18 +21,18 @@ public class MParser {
 
     public void parse(String toParse) {
         for (int index = 0; index < toParse.length(); ) {
-            if (MNumber.isNumeric(toParse.charAt(index))) {
+            if (MCharacter.isNumeric(toParse.charAt(index))) {
                 int temp = 0;
                 String num = "";
                 try {
-                    while (MNumber.isNumeric(toParse.charAt(index + temp)) || toParse.charAt(index + temp) == '.') {
+                    while (MCharacter.isNumeric(toParse.charAt(index + temp)) || toParse.charAt(index + temp) == '.') {
                         num += String.valueOf(toParse.charAt(index + temp));
                         temp++;
                     }
                 } catch (StringIndexOutOfBoundsException e) {}
                 stack.push(new MNumber(num));
                 index += temp;
-            } else if (toParse.charAt(index) == ' ' || toParse.charAt(index) == '\n') {
+            } else if (MCharacter.isWhitespace(toParse.charAt(index))) {
                 index++;
             } else {
                 index++;

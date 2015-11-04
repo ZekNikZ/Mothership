@@ -98,11 +98,6 @@ public class MNumber implements MObject {
         return num;
     }
 
-    public static boolean isNumeric(char s) {
-        String t = String.valueOf(s);
-        return "0123456789".contains(t);
-    }
-
     public String toString() {
         switch (type) {
             case 0:
