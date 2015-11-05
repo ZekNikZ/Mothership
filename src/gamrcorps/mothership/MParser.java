@@ -24,15 +24,19 @@ public class MParser {
             if (MCharacter.isNumeric(toParse.charAt(index))) {
                 int temp = 0;
                 String num = "";
-                try {
-                    while (MCharacter.isNumeric(toParse.charAt(index + temp)) || toParse.charAt(index + temp) == '.') {
+                    while (index + temp < toParse.length() && (MCharacter.isNumeric(toParse.charAt(index + temp)) || toParse.charAt(index + temp) == '.')) {
                         num += String.valueOf(toParse.charAt(index + temp));
                         temp++;
                     }
-                } catch (StringIndexOutOfBoundsException e) {}
                 stack.push(new MNumber(num));
                 index += temp;
             } else if (MCharacter.isWhitespace(toParse.charAt(index))) {
+                index++;
+            } else if (index+2<toParse.length() && MOps.isOperator(toParse.substring(index,index+2))) {
+                MOps.runOperator(toParse.substring(index,index+2), stack);
+                index+=2;
+            } else if (MOps.isOperator(toParse.substring(index,index+1))) {
+                MOps.runOperator(toParse.substring(index,index+1), stack);
                 index++;
             } else {
                 index++;

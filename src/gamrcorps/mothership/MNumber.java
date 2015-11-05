@@ -5,7 +5,7 @@ import java.math.BigInteger;
 
 //Number class to merge four data types into one
 
-public class MNumber implements MObject {
+public class MNumber extends MObject {
     public long intValue;
     public double doubleValue;
     public BigInteger bigIntValue;
@@ -110,5 +110,38 @@ public class MNumber implements MObject {
                 return bigDoubleValue.toString();
         }
         return null;
+    }
+
+    public BigDecimal toBigDecimal() {
+        switch (type) {
+            case 0:
+                return new BigDecimal(intValue);
+            case 1:
+                return new BigDecimal(doubleValue);
+            case 2:
+                return new BigDecimal(bigIntValue);
+            case 3:
+                return bigDoubleValue;
+        }
+        return null;
+    }
+
+    public BigInteger toBigInt() {
+        switch (type) {
+            case 0:
+                return new BigInteger("" + intValue);
+            case 1:
+                return new BigInteger("" + doubleValue);
+            case 2:
+                return bigIntValue;
+            case 3:
+                return new BigInteger(bigDoubleValue.toString());
+        }
+        return null;
+    }
+
+    @Override
+    public String getType() {
+        return "Number";
     }
 }

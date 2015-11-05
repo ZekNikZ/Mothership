@@ -1,9 +1,6 @@
 package src.gamrcorps.mothership;
 
-/**
- * Created by Matthew on 11/4/2015.
- */
-public class MCharacter implements MObject {
+public class MCharacter extends MObject {
     //TODO: STUB
 
     public static boolean isWhitespace(char c){
@@ -22,5 +19,13 @@ public class MCharacter implements MObject {
 
     public static boolean isNumeric(String s) {
         return "0123456789".contains(s.substring(0,1));
+    }
+
+    public String toString() {
+        return null;//TODO: FIX
+    }
+
+    public String getType() {
+        return "Character";
     }
 }

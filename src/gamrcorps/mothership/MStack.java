@@ -6,7 +6,7 @@ import java.util.List;
 //Standard stack class for storing data in a program
 
 @SuppressWarnings("unchecked")
-public class MStack implements MObject {
+public class MStack extends MObject {
     private List<MObject> stack;
 
     public MStack() {
@@ -14,22 +14,22 @@ public class MStack implements MObject {
     }
 
     //Remove and return object at the top of the stack
-    public Object pop() {
+    public MObject pop() {
         return grab(stack.size() - 1);
     }
 
     //Return object at the top of the stack
-    public Object peek() {
+    public MObject peek() {
         return peek(stack.size() - 1);
     }
 
     //Remove and return object at the index specified
-    public Object grab(int index) {
+    public MObject grab(int index) {
         return stack.size() > 0 ? stack.remove(index) : MNumber.zero();
     }
 
     //Return object at the index specified
-    public Object peek(int index) {
+    public MObject peek(int index) {
         return stack.size() > 0 ? stack.get(index) : MNumber.zero();
     }
 
@@ -67,5 +67,9 @@ public class MStack implements MObject {
             temp += separator;
         }
         return temp;
+    }
+
+    public String getType() {
+        return "Stack";
     }
 }

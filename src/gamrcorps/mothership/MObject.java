@@ -1,8 +1,6 @@
 package src.gamrcorps.mothership;
 
-/**
- * Created by Matthew on 11/4/2015.
- */
-public interface MObject {
-    String toString();
+public abstract class MObject {
+    public abstract String toString();
+    public abstract String getType();
 }
