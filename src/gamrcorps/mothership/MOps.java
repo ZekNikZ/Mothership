@@ -23,6 +23,48 @@ public class MOps {
                 }
             }
         });
+        add("-", new MOp("-") {
+            @Override
+            public MObject run(MStack stack) {
+                MObject arg2 = stack.pop();
+                MObject arg1 = stack.pop();
+                if (arg1 instanceof MNumber && arg2 instanceof MNumber){
+                    MNumber result = new MNumber(new BigDecimal(((MNumber) arg1).toString()).subtract(((MNumber) arg2).toBigDecimal()));
+                    stack.push(result);
+                    return result;
+                } else {
+                    throw new MOperatorException("-", arg1, arg2);
+                }
+            }
+        });
+        add("*", new MOp("*") {
+            @Override
+            public MObject run(MStack stack) {
+                MObject arg2 = stack.pop();
+                MObject arg1 = stack.pop();
+                if (arg1 instanceof MNumber && arg2 instanceof MNumber){
+                    MNumber result = new MNumber(new BigDecimal(((MNumber) arg1).toString()).multiply(((MNumber) arg2).toBigDecimal()));
+                    stack.push(result);
+                    return result;
+                } else {
+                    throw new MOperatorException("*", arg1, arg2);
+                }
+            }
+        });
+        add("/", new MOp("/") {
+            @Override
+            public MObject run(MStack stack) {
+                MObject arg2 = stack.pop();
+                MObject arg1 = stack.pop();
+                if (arg1 instanceof MNumber && arg2 instanceof MNumber){
+                    MNumber result = new MNumber(new BigDecimal(((MNumber) arg1).toString()).divide(((MNumber) arg2).toBigDecimal()));
+                    stack.push(result);
+                    return result;
+                } else {
+                    throw new MOperatorException("/", arg1, arg2);
+                }
+            }
+        });
     }
 
     public static boolean isOperator(String name) {
