@@ -1,7 +1,11 @@
 package src.gamrcorps.mothership;
 
 public class MCharacter extends MObject {
-    //TODO: STUB
+    public char value;
+
+    public MCharacter (char character){
+        value = character;
+    }
 
     public static boolean isWhitespace(char c){
         String t = String.valueOf(c);
@@ -22,7 +26,7 @@ public class MCharacter extends MObject {
     }
 
     public String toString() {
-        return null;//TODO: FIX
+        return String.valueOf(value);
     }
 
     public String getType() {
