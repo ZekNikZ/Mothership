@@ -1,0 +1,24 @@
+tA - arctan2 (x,y)
+ta - area of triangle (b,h)
+tc - cosine
+tC - arccosine
+ts - sine
+tS - arcsine
+tt - tangent
+tT - arctangent
+te - secant
+tE - arcsecant
+tn - cosecant
+tN - arccosecant
+tg - cotangent
+tG - arccotangent
+td - turn into degree mode
+tr - turn into radian mode (default)
+th - hypotenuse
+tH - leg (leg, hyp)
+tz - convert to degrees
+tZ - convert to radians
+
+TODO:
+tp - angle to point on unit circle
+tP - angle to point on circle (angle, radius)

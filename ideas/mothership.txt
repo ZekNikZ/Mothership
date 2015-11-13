@@ -1,0 +1,8 @@
+remove duplicates in string / array
+parse input ([input]"? days ? hours ? minutes ? seconds""?:?:?:?")
+mothership-one command per line
+
+POssible
+APL-like
+
+ASCII table characters

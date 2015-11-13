@@ -1,0 +1,40 @@
+ d	debug
+ p	print ln
+ o	output
+t_	trig
+f	for
+ w	while
+m_	math
+ s	convert to string
+ e	eval
+ c	convert to char
+ d	convert to double
+ i	convert to int
+ b	base conversion
+ a	absolute value
+
+A-10
+B-11
+C-12
+D-13
+E-14
+F-15
+G-16
+H-17
+I-18
+K-19
+L-20
+M-[] (empty array)
+N-newline char
+O-"" (empty string)
+P-pi
+Q-0
+R-0
+S-space
+T-tau
+U--2
+V--1
+W-0
+X-1
+Y-2
+Z-3
