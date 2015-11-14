@@ -22,3 +22,6 @@ tZ - convert to radians
 TODO:
 tp - angle to point on unit circle
 tP - angle to point on circle (angle, radius)
+
+
+Hyperbolic Trig
