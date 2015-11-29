@@ -14,6 +14,7 @@ m_	math
  a	absolute value
 
 need translitterate via arrays "string"["a1""r2""r3""a4""5y"]er
+multiline string concat
 
 A-10
 B-11
