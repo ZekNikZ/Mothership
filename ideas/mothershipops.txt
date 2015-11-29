@@ -13,6 +13,8 @@ m_	math
  b	base conversion
  a	absolute value
 
+need translitterate via arrays "string"["a1""r2""r3""a4""5y"]er
+
 A-10
 B-11
 C-12
